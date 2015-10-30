@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://neos.org/spring/ws/stub/account" targetNamespace="http://neos.org/spring/ws/stub/account"
+	elementFormDefault="qualified">
+
+	<xsd:element name="AccountDetailsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="accountNumber" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AccountDetailsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AccountDetails" type="tns:account" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="account">
+		<xsd:sequence>
+			<xsd:element name="AccountNumber" type="xsd:string"/>
+			<xsd:element name="AccountName" type="xsd:string"/>
+			<xsd:element name="AccountBalance" type="xsd:double"/>
+			<xsd:element name="AccountStatus" type="tns:enumAccountStatus"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="enumAccountStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Inactive"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
