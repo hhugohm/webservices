@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>spring-ws-client</groupId>
+	<artifactId>spring-ws-client</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<spring.version>4.2.2.RELEASE</spring.version>
+		<spring.ws.version>2.2.2.RELEASE</spring.ws.version>
+		<log4j.version>1.2.16</log4j.version>
+		<context.path>spring-webservices-sample</context.path>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!--  
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.12.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaLanguage>WSDL</schemaLanguage>
+					<generatePackage>org.neos.spring.ws.client</generatePackage>
+					<schemas>
+						<schema>
+							<url>http://localhost:8080/spring-ws/endpoints/ws-services.wsdl</url>
+						</schema>
+					</schemas>
+				</configuration>
+			</plugin>
+			-->
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+			<version>${spring.ws.version}</version>
+		</dependency>
+		<!-- jars dependencia para spring ws -->
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ws.xmlschema</groupId>
+			<artifactId>xmlschema-core</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+<dependency>
+	<groupId>commons-httpclient</groupId>
+	<artifactId>commons-httpclient</artifactId>
+	<version>3.1</version>
+</dependency>
+
+	</dependencies>
+
+</project>
+
+<!-- 
+
+</plugin>       
+       <plugin>
+           <groupId>org.jvnet.jaxb2.maven2</groupId>
+           <artifactId>maven-jaxb2-plugin</artifactId>
+           <version>0.7.1</version>
+           <executions>
+             <execution>
+               <goals>
+                 <goal>generate</goal>
+               </goals>
+             </execution>
+           </executions>
+            <configuration>
+             <schemaDirectory>src/main/resources/dir1</schemaDirectory>
+              <schemaIncludes>
+                  <include>schema1.xsd</include>
+              </schemaIncludes>
+              <generatePackage>schema1.package</generatePackage>
+           </configuration>
+         </plugin>
+          <plugin>
+           <groupId>org.jvnet.jaxb2.maven2</groupId>
+           <artifactId>maven-jaxb2-plugin</artifactId>
+           <version>0.7.1</version>
+           <executions>
+             <execution>
+               <goals>
+                 <goal>generate</goal>
+               </goals>
+             </execution>
+           </executions>
+            <configuration>
+             <schemaDirectory>src/main/resources/dir2</schemaDirectory>
+              <schemaIncludes>
+                  <include>schema2.xsd</include>
+              </schemaIncludes>
+              <generatePackage>schema2.package</generatePackage>
+           </configuration>
+         </plugin>
+       </plugins>
+
+ -->
