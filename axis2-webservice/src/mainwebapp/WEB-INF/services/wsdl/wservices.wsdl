@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://org.neos.axis2.ws.service" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://service.ws.axis2.neos.org" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://service.ws.axis2.neos.org">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://org.neos.axis2.ws.service">
+            <xs:element name="farenheitToCelsius">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="farenheit" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="farenheitToCelsiusResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="celsiusToFarenheit">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="celsius" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="celsiusToFarenheitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getMessageService">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getMessageServiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="factorial">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="number" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="factorialResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="farenheitToCelsiusRequest">
+        <wsdl:part name="parameters" element="ns:farenheitToCelsius"/>
+    </wsdl:message>
+    <wsdl:message name="farenheitToCelsiusResponse">
+        <wsdl:part name="parameters" element="ns:farenheitToCelsiusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="celsiusToFarenheitRequest">
+        <wsdl:part name="parameters" element="ns:celsiusToFarenheit"/>
+    </wsdl:message>
+    <wsdl:message name="celsiusToFarenheitResponse">
+        <wsdl:part name="parameters" element="ns:celsiusToFarenheitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getMessageServiceRequest">
+        <wsdl:part name="parameters" element="ns:getMessageService"/>
+    </wsdl:message>
+    <wsdl:message name="getMessageServiceResponse">
+        <wsdl:part name="parameters" element="ns:getMessageServiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="factorialRequest">
+        <wsdl:part name="parameters" element="ns:factorial"/>
+    </wsdl:message>
+    <wsdl:message name="factorialResponse">
+        <wsdl:part name="parameters" element="ns:factorialResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="wservicesPortType">
+        <wsdl:operation name="farenheitToCelsius">
+            <wsdl:input message="tns:farenheitToCelsiusRequest" wsaw:Action="urn:farenheitToCelsius"/>
+            <wsdl:output message="tns:farenheitToCelsiusResponse" wsaw:Action="urn:farenheitToCelsiusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="celsiusToFarenheit">
+            <wsdl:input message="tns:celsiusToFarenheitRequest" wsaw:Action="urn:celsiusToFarenheit"/>
+            <wsdl:output message="tns:celsiusToFarenheitResponse" wsaw:Action="urn:celsiusToFarenheitResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getMessageService">
+            <wsdl:input message="tns:getMessageServiceRequest" wsaw:Action="urn:getMessageService"/>
+            <wsdl:output message="tns:getMessageServiceResponse" wsaw:Action="urn:getMessageServiceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="factorial">
+            <wsdl:input message="tns:factorialRequest" wsaw:Action="urn:factorial"/>
+            <wsdl:output message="tns:factorialResponse" wsaw:Action="urn:factorialResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="wservicesSoap11Binding" type="tns:wservicesPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="farenheitToCelsius">
+            <soap:operation soapAction="urn:farenheitToCelsius" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="celsiusToFarenheit">
+            <soap:operation soapAction="urn:celsiusToFarenheit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMessageService">
+            <soap:operation soapAction="urn:getMessageService" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="factorial">
+            <soap:operation soapAction="urn:factorial" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="wservicesSoap12Binding" type="tns:wservicesPortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="farenheitToCelsius">
+            <soap12:operation soapAction="urn:farenheitToCelsius" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="celsiusToFarenheit">
+            <soap12:operation soapAction="urn:celsiusToFarenheit" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMessageService">
+            <soap12:operation soapAction="urn:getMessageService" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="factorial">
+            <soap12:operation soapAction="urn:factorial" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="wservicesHttpBinding" type="tns:wservicesPortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="farenheitToCelsius">
+            <http:operation location="farenheitToCelsius"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="celsiusToFarenheit">
+            <http:operation location="celsiusToFarenheit"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getMessageService">
+            <http:operation location="getMessageService"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="factorial">
+            <http:operation location="factorial"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="wservices">
+        <wsdl:port name="wservicesHttpSoap11Endpoint" binding="tns:wservicesSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/wservices"/>
+        </wsdl:port>
+        <wsdl:port name="wservicesHttpSoap12Endpoint" binding="tns:wservicesSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/wservices"/>
+        </wsdl:port>
+        <wsdl:port name="wservicesHttpEndpoint" binding="tns:wservicesHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/wservices"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

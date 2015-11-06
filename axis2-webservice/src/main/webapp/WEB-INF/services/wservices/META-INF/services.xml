@@ -1,0 +1,28 @@
+<serviceGroup>
+  <service name="wservices" targetNamespace="http://org.neos.axis2.ws.service">
+    <description>Servicios web NeosSystem</description>
+    <!--  
+    <schema schemaNamespace="http://ws.axis2Example/" />
+    -->
+    <parameter name="ServiceClass" locked="false">org.neos.axis2.ws.service.BusinessService</parameter> <!-- lugar donde se encuentran los servicios web -->
+    <operation name="getMessageService"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="celsiusToFarenheit"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+     <operation name="farenheitToCelsius"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+    <operation name="factorial"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="org.neos.axis2.ws.service" >
+      <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+  </service>
+  
+  <!--  <operation name="addHighScore" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://serivces.itcuties.com/xsd">
+        <actionMapping>http://serivces.itcuties.com/xsd/addHighScore</actionMapping>
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+    </operation>
+ -->
+  
+</serviceGroup>
