@@ -8,7 +8,7 @@
 
 	<build>
 		<plugins>
-			<!-- Activar para construir el cliente 
+			<!-- Puede construir el cliente xmlbeans 
 			<plugin>
 				<groupId>org.apache.axis2</groupId>
 				<artifactId>axis2-wsdl2code-maven-plugin</artifactId>
@@ -23,18 +23,16 @@
 				</executions>
 				<configuration>
 				-->
-				<!--  
-					<wsdlFile>${basedir}/src/main/resources/wservices.wsdl</wsdlFile>
-				-->	
-				<!--  
-				<wsdlFile>http://localhost:8080/axis2-webservice/services/wservices?wsdl</wsdlFile>
-					<databindingName>adb</databindingName>
-					<packageName>org.neos.axis2.ws.stub</packageName>  
-					<outputDirectory>src/main/java</outputDirectory>  
-					<flattenFiles>true</flattenFiles>  
+					<!-- 
+					<classpathElements>${project.build.outputDirectory}</classpathElements>
+					 -->
+			<!--  
+					<wsdlFile>http://localhost:8080/axis2-webservice/services/wservices?wsdl</wsdlFile>
+					<databindingName>xmlbeans</databindingName>
+					<outputDirectory>${project.build.directory}/axis2/wsdl2code/src</outputDirectory>  
+					<packageName>org.neos.axis2.ws.xmlbeans.stub</packageName>
 				</configuration>
 			</plugin>
-			
 			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
