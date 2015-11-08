@@ -3,8 +3,8 @@ package org.neos.axis2.ws.client;
 
 import java.rmi.RemoteException;
 
+import org.neos.axis2.ws.stub.WservicesStub;
 
-import service.ws.axis2.neos.org.WservicesStub;
 
 public class Test {
 
