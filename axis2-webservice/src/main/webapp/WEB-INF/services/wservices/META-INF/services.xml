@@ -5,7 +5,11 @@
     <schema schemaNamespace="http://ws.axis2Example/" />
     -->
     <parameter name="ServiceClass" locked="false">org.neos.axis2.ws.service.BusinessService</parameter> <!-- lugar donde se encuentran los servicios web -->
-    <operation name="getMessageService"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
+    <operation name="getMessageService"    mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
+    <actionMapping>getMessageService</actionMapping>
+    <!-- 
+      <actionMapping>http://localhost:8080/axis2-webservice/services/wservices/getMessageService</actionMapping>
+       -->
       <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
     </operation>
     <operation name="celsiusToFarenheit"  mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://org.neos.axis2.ws.service" >
