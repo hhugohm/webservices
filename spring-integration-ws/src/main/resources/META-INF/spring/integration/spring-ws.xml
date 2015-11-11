@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-ws="http://www.springframework.org/schema/integration/ws"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/ws http://www.springframework.org/schema/integration/ws/spring-integration-ws.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+	
+	<context:component-scan base-package="org.neos"/>
+	<!--  
+	<context:property-placeholder location="classpath:props/service.properties"/>
+	
+	-->
+	<!--  
+	<int:channel id="inputChannel" />
+	<int-ws:inbound-gateway id="channelCountry" request-channel="inputChannel" />
+	-->
+	
+	<!-- System entry -->
+	<int:gateway id="channelCountry"   default-request-channel="requestChannel" service-interface="org.neos.spring.ws.service.CountryService"/>
+	
+	<int:logging-channel-adapter id="loggingChannel" level="DEBUG"  />
+	
+	<!-- Web service invocation -->
+	<int-ws:outbound-gateway uri="http://localhost:8080/spring-ws/endpoints/getCountryRequest" 
+			marshaller="marshaller" unmarshaller="marshaller" 
+			request-channel="requestChannel" message-sender="messageSender"/>
+	
+	<oxm:jaxb2-marshaller id="marshaller" contextPath="org.neos.spring.ws.client" />
+	
+	<bean id="messageSender" class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+		<property name="connectionTimeout" value="2000"/>
+		<property name="readTimeout" value="2000"/>
+	</bean>
+	
+	
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	
+	<!-- System entry 
+	<int:gateway id="channelMessageAxis"   default-request-channel="requestChannel2" service-interface="org.neos.spring.ws.service.MessageService"/>
+	
+	
+	<int-ws:outbound-gateway uri="http://localhost:8080/axis2-webservice/services/wservices/getMessageService" 
+			marshaller="marshaller2" unmarshaller="marshaller2"  
+			request-channel="requestChannel2" message-sender="messageSender" />
+	
+	
+	<oxm:jaxb2-marshaller id="marshaller2" contextPath="org.neos.axis2.ws.stub" />
+	-->
+
+</beans>
