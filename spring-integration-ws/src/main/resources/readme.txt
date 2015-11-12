@@ -60,3 +60,7 @@ http://www.leveluplunch.com/java/tutorials/021-consume-get-request-spring-rest-w
 	     
 	    System.out.println(result.getBody());
 	    */
+
+	    https://github.com/autentia/esb-tutorial/blob/master/prueba-spring-integration/src/main/resources/META-INF/spring/integration/spring-integration.xml
+	    https://www.credera.com/blog/technology-insights/java/spring-integration-tip-iceberg/
+	    http://howtodoinjava.com/2015/02/20/spring-restful-client-resttemplate-example/
