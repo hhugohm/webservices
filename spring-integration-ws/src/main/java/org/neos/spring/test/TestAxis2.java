@@ -27,7 +27,7 @@ public class TestAxis2 {
 		//channel.send(message);
 		String reply = gateway.sendAndReceive(requestXml);
 		System.out.println(reply);
-			
+		context.close();
 	}
 
 }
