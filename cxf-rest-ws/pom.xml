@@ -8,7 +8,6 @@
 	<name>cxf-rest-ws</name>
 	<description>Example of Cxf Based Rest Service</description>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

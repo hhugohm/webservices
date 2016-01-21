@@ -9,7 +9,7 @@ public class UserRestServiceImpl implements IUserRestService{
 
 	@Override
 	public Response getUserDetail(String userId) {
-		System.out.println("ENTRANDO AL SERVICIO USUARIO REST-cambio"); 
+		System.out.println("ENTRANDO AL SERVICIO cambio"); 
 		
 		User user = new User("HUGO","HIDALGO","hhugohm@gmail.com");
 		
