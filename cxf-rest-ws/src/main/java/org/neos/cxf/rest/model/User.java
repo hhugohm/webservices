@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 import lombok.*;
 
+/**
+ * Esta clase demuestra el uso del proyecto Lombok con la finalidad de <br>
+ * no estar escribiendo setter/getter, constructor
+ * @author hector.hidalgo
+ *
+ */
 @Data
 public class User  implements Serializable{
 	
