@@ -1,7 +1,9 @@
 package org.neos.cxf.rest.dao;
 
 import org.neos.cxf.rest.model.Employee;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EmployeeDao {
 
 	public Employee getEmployeeDetails(String employeeId) {

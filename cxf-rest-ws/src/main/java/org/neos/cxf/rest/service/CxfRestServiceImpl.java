@@ -5,7 +5,9 @@ import javax.ws.rs.core.Response;
 import org.neos.cxf.rest.dao.EmployeeDao;
 import org.neos.cxf.rest.ws.CxfRestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CxfRestServiceImpl implements CxfRestService {
 	@Autowired
 	private EmployeeDao employeeDao;

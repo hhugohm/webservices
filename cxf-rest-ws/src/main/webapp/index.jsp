@@ -1,5 +1,10 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Servicios Web REST</h2>
+<p>
+<b>http://localhost:8080/cxf-rest-ws/rest/service/user/getuserdetail?userId=1</b> <br>
+<b>http://localhost:8080/cxf-rest-ws/rest/service/employees/getemployeedetail?employeeId=1</b>
+
+<br>
 </body>
 </html>
