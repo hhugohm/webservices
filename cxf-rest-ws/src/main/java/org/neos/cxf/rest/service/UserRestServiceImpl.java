@@ -9,9 +9,9 @@ public class UserRestServiceImpl implements IUserRestService{
 
 	@Override
 	public Response getUserDetail(String userId) {
-		System.out.println("ENTRANDO AL SERVICIO..."); 
+		System.out.println("ENTRANDO AL SERVICIO::"); 
 		
-		User user = new User("HUGO","HIDALGO","hhugohm@gmail.com");
+		User user = new User("HUGO","HIDALGO","hhugohm@gmail.comm");
 		
 		return Response.status(Response.Status.OK).entity(user).build();
 	}

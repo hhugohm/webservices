@@ -8,6 +8,12 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * Esta clase muestra el funcionamiento de un servicio REST get con path <br>
+ * /service/user ademas de consumir y producir cadenas JSON
+ * @author hector.hidalgo
+ *
+ */
 @Path("/service/user")
 public interface IUserRestService {
 	
@@ -16,6 +22,11 @@ public interface IUserRestService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/getuserdetail")
+	/**
+	 * Este metodo devuelve la informacion de un usuario en cadena JSON
+	 * @param userId es el parametro que viene en la peticion
+	 * @return regresa una cadena json con la info de un usuario
+	 */
 	public Response getUserDetail(@QueryParam("userId") String userId);
 
 }

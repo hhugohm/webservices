@@ -1,2 +1,7 @@
+end-points
 http://localhost:8080/cxf-rest-ws/rest/service/user/getuserdetail?userId=1
 http://localhost:8080/cxf-rest-ws/rest/service/employees/getemployeedetail?employeeId=1
+
+definiciones del servicio rest
+http://localhost:8080/cxf-rest-ws/rest/service/employees?_wadl
+http://localhost:8080/cxf-rest-ws/rest/service/user/getuserdetail?_wadl

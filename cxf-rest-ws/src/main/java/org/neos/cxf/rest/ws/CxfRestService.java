@@ -8,11 +8,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/**
- * 
- * This is interface for the employee services
- *
- */
+
 //@Path("/")
 //@WebService(name="employeeService", targetNamespace="http://www.lessonslab.com/cxf-rest/example")
 @Path("/service/employees")
