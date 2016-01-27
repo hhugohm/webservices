@@ -4,7 +4,7 @@
 <p>
 <b>http://localhost:8080/cxf-rest-ws/rest/service/user/getuserdetail?userId=1</b> <br>
 <b>http://localhost:8080/cxf-rest-ws/rest/service/employees/getemployeedetail?employeeId=1</b><br>
-<b>http://localhost:8080/cxf-rest-ws/rest/service/user/files/Scrum-Guide-ES.pdf</b><br>
+<b>http://localhost:8080/cxf-rest-ws/rest/service/user/files/download/Scrum-Guide-ES.pdf</b><br>
 
 
 <br>

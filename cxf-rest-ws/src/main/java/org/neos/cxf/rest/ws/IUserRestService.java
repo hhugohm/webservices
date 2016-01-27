@@ -39,7 +39,7 @@ public interface IUserRestService {
 
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/files/{fileName}")
+	@Path("/files/download/{fileName}")
 	@Produces({"application/pdf"})
 	public Response downloadFile(@Context HttpServletRequest request,
 									@PathParam("fileName") String fileName);
