@@ -26,13 +26,14 @@ public class UserRestServiceImpl implements IUserRestService{
 
 	@Override
 	public Response downloadFile(HttpServletRequest request, String fileName) {
-		String filePath = "C://logs";
-		log.info("fileName: "+fileName);
+		String relativePath=File.separator+"files"+File.separator+fileName;
+		String uploadPath = 
+				request.getServletContext().getRealPath("")+ relativePath;
+		log.info("path: "+ uploadPath);
 		File file = null;
-		file= new File(filePath + "/" + fileName.trim());
+		file= new File( uploadPath);
 		if ( file !=null ) {
 			log.info("ENTRANDO AL SERVICIO - downloadFile.. ");
-			
 			ResponseBuilder response = Response.ok((Object) file);
 			response.header("Content-Disposition", 
 									"attachment; filename="+fileName.trim());
