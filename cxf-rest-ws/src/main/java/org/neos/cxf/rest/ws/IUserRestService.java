@@ -3,6 +3,7 @@ package org.neos.cxf.rest.ws;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -10,6 +11,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 
 /**
  * Esta clase muestra el funcionamiento de un servicio REST get con path <br>
@@ -40,6 +43,12 @@ public interface IUserRestService {
 	@Produces({"application/pdf"})
 	public Response downloadFile(@Context HttpServletRequest request,
 									@PathParam("fileName") String fileName);
+	
+	
+	@POST
+	@Path("/files/upload")
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public Response uploadFile(Attachment attachment, @Context HttpServletRequest request);
 		
 
 }

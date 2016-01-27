@@ -1,6 +1,7 @@
 end-points
 http://localhost:8080/cxf-rest-ws/rest/service/user/getuserdetail?userId=1
 http://localhost:8080/cxf-rest-ws/rest/service/user/files/Scrum-Guide-ES.pdf
+http://localhost:8080/cxf-rest-ws/rest/service/user/files/upload
 http://localhost:8080/cxf-rest-ws/rest/service/employees/getemployeedetail?employeeId=1
 
 definiciones del servicio rest
