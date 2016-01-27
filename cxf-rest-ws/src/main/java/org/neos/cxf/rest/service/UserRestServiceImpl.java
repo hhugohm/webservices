@@ -1,6 +1,10 @@
 package org.neos.cxf.rest.service;
 
+import java.io.File;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 import lombok.extern.slf4j.Slf4j;
 import org.neos.cxf.rest.model.User;
@@ -13,11 +17,30 @@ public class UserRestServiceImpl implements IUserRestService{
 
 	@Override
 	public Response getUserDetail(String userId) {
-		log.info("ENTRANDO AL SERVICIO - ");
+		log.info("ENTRANDO AL SERVICIO - getUserDetail.. ");
 		
 		User user = new User("HUGO","HIDALGO","hhugohm@gmail.comm");
 		
 		return Response.status(Response.Status.OK).entity(user).build();
+	}
+
+	@Override
+	public Response downloadFile(HttpServletRequest request, String fileName) {
+		String filePath = "C://logs";
+		log.info("fileName: "+fileName);
+		File file = null;
+		file= new File(filePath + "/" + fileName.trim());
+		if ( file !=null ) {
+			log.info("ENTRANDO AL SERVICIO - downloadFile.. ");
+			
+			ResponseBuilder response = Response.ok((Object) file);
+			response.header("Content-Disposition", 
+									"attachment; filename="+fileName.trim());
+			return response.build();
+		} else {
+			return Response.status(
+								Response.Status.CONFLICT).entity(null).build(); 
+			}
 	}
 
 }
