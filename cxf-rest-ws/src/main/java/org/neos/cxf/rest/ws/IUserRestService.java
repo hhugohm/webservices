@@ -23,16 +23,15 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 @Path("/service/user")
 public interface IUserRestService {
 	
-	
-	@GET
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/getuserdetail")
 	/**
 	 * Este metodo devuelve la informacion de un usuario en cadena JSON
 	 * @param userId es el parametro que viene en la peticion
 	 * @return regresa una cadena json con la info de un usuario
 	 */
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/getuserdetail")
 	public Response getUserDetail(@QueryParam("userId") String userId);
 	
 	
