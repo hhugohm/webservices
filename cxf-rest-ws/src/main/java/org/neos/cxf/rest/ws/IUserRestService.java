@@ -48,7 +48,13 @@ public interface IUserRestService {
 	@POST
 	@Path("/files/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public Response uploadFile(Attachment attachment, @Context HttpServletRequest request);
-		
+	public Response uploadFile(Attachment attachment, 
+										@Context HttpServletRequest request);
+	@GET
+	@Path("/files/image")
+	@Produces({"image/png", "image/jpg", "image/gif"})
+	public Response getFullImage(@Context HttpServletRequest request,
+									@PathParam("fileName") String fileName);
 
+	
 }

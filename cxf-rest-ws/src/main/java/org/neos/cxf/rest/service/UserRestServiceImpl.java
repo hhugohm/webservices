@@ -1,13 +1,22 @@
 package org.neos.cxf.rest.service;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.activation.DataHandler;
+import javax.activation.MimetypesFileTypeMap;
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.ImageIcon;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
@@ -101,5 +110,64 @@ public class UserRestServiceImpl implements IUserRestService{
 		}
 		return "unknown";
 	}
+
+	@Override
+	public Response getFullImage(HttpServletRequest request, String fileName) {
+		log.info("EN EL SERVICIO IMAGE...");
+		
+		String relativePath=File.separator+"images"+File.separator+ "minions.jpg";
+		String fullPath = 
+				request.getServletContext().getRealPath("")+ relativePath;
+		
+		FileInputStream fileInputStream=null;
+        File file = new File(fullPath);
+        byte[] bFile = new byte[(int) file.length()];
+       
+       
+	    try {
+			fileInputStream = new FileInputStream(file);
+			fileInputStream.read(bFile);
+			fileInputStream.close();
+		} catch (IOException  e) {
+			e.printStackTrace();
+		}
+	    return Response.ok(bFile).build();
+	    //String mt = new MimetypesFileTypeMap().getContentType(file);
+       
+	    //return Response.ok(bFile,mt).build();
+	}
+	
+	/*	File file = new File(fullPath);
+    ResponseBuilder response = Response.ok((Object) file);
+    response.header("Content-Disposition", "attachment; filename=test.png");
+    log.info("Termina...");
+    return response.build();*/
+	/*
+	log.info("image: "+fullPath);
+	File file = new File(fullPath);
+  String mediaType = SomeContentTypeMapHere(file);
+  return Response.ok(file,mediaType).build();*/
+
+	
+	/*Image  img = new ImageIcon(fullPath).getImage();
+
+  BufferedImage bufferedImage = new BufferedImage(img.getWidth(null), img.getHeight(null),
+      BufferedImage.OPAQUE);
+
+  ByteArrayOutputStream baos = new ByteArrayOutputStream();
+  try {
+		ImageIO.write(bufferedImage, "png", baos);
+	} catch (IOException e) {
+		
+		e.printStackTrace();
+	}
+  byte[] imageData = baos.toByteArray();
+
+// return Response.ok(imageData.toByteArray()).build();
+  //return Response.ok(new ByteArrayInputStream(imageData)).build();
+  log.info("TERMINO..");
+ 
+  return Response.ok(imageData).build();*/
+	
 
 }
