@@ -32,6 +32,7 @@ public class UserRestServiceImpl implements IUserRestService{
 		return Response.status(Response.Status.OK).entity(user).build();
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public Response downloadFile(HttpServletRequest request, String fileName) {
 		String relativePath=File.separator+"files"+File.separator+fileName;
