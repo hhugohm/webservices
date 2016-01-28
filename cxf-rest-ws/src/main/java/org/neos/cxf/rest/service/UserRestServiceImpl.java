@@ -42,7 +42,7 @@ public class UserRestServiceImpl implements IUserRestService{
 		File file = null;
 		file= new File( downloadPath);
 		if ( file !=null ) {
-			log.info("ENTRANDO AL SERVICIO - downloadFile.. ");
+			log.info("ENTRANDO AL SERVICIO - downloadFile+.. ");
 			ResponseBuilder response = Response.ok((Object) file);
 			response.header("Content-Disposition", 
 									"attachment; filename="+fileName.trim());
