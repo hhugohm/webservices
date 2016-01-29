@@ -1,32 +1,24 @@
 package org.neos.cxf.rest.service;
 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.activation.DataHandler;
-import javax.activation.MimetypesFileTypeMap;
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.ImageIcon;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
-
-import lombok.extern.slf4j.Slf4j;
 
 import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 import org.neos.cxf.rest.model.User;
 import org.neos.cxf.rest.ws.IUserRestService;
 import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
