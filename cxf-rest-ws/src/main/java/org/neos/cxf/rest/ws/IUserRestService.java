@@ -17,7 +17,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 /**
  * Esta clase muestra el funcionamiento de un servicio REST get con path <br>
  * /service/user ademas de consumir y producir cadenas JSON
- * @author hector.hidalgo
+ * @author hugo hidalgo
  *
  */
 @Path("/service/user")
@@ -35,7 +35,12 @@ public interface IUserRestService {
 	public Response getUserDetail(@QueryParam("userId") String userId);
 	
 	
-
+	/**
+	 * Este metodo devuelve diferentes tipos de archivos
+	 * @param request se utiliza para buscar el contexto de la aplicacion
+	 * @param fileName nombre del archivo a bajar
+	 * @return
+	 */
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/files/download/{fileName}")
@@ -44,12 +49,24 @@ public interface IUserRestService {
 	public Response downloadFile(@Context HttpServletRequest request,
 									@PathParam("fileName") String fileName);
 	
-	
+	/**
+	 * Este metodo se encarga de subir un archivo a  la aplicacion
+	 * @param attachment contiene el archivo adjunto
+	 * @param request se utiliza para buscar el contexto de la aplicacion
+	 * @return regresa el estatus si fue correcto el fileuoload
+	 */
 	@POST
 	@Path("/files/upload")
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	public Response uploadFile(Attachment attachment, 
 										@Context HttpServletRequest request);
+	
+	/**
+	 * Este metodo se encarga de mostrar una imagen en el browser
+	 * @param request se utiliza para buscar el contexto de la aplicacion
+	 * @param fileName contiene el nombre de la imagen  a mostar
+	 * @return
+	 */
 	@GET
 	@Path("/files/image")
 	@Produces({"image/png", "image/jpg", "image/gif"})
