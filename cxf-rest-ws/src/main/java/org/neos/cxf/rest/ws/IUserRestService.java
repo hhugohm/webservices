@@ -16,7 +16,7 @@ import org.apache.cxf.jaxrs.ext.multipart.Attachment;
 
 /**
  * Esta clase muestra el funcionamiento de un servicio REST get con path <br>
- * /service/user ademas de consumir y producir cadenas JSON
+ * /service/user ademas de consumir y producir cadenas JSON y otros tipos
  * @author hugo hidalgo
  *
  */
