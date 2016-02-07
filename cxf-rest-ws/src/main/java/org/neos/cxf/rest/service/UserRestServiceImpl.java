@@ -56,6 +56,7 @@ public class UserRestServiceImpl implements IUserRestService{
 
 	@Override
 	public Response uploadFile(Attachment attachment, HttpServletRequest request) {
+		log.info("ENTRANDO AL SERVICIO WEB UPLOAD FILE..");
 		String relativePath=File.separator+"upload"+File.separator;
 		
 		DataHandler handler = attachment.getDataHandler();
