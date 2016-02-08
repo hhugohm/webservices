@@ -16,8 +16,9 @@ public class CxfRestServiceImpl implements CxfRestService {
 
     @Override
     public Response getEmployeeDetail(String employeeId) {
-         log.info("CAMBIO DESDE MASTER..");
         log.info("ENTRANDO AL SERVICIO EMPLEADO REST-CAMBIO");
+        
+        
         if (employeeId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
