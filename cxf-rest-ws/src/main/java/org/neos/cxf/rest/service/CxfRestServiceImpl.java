@@ -27,6 +27,7 @@ public class CxfRestServiceImpl implements CxfRestService {
         // return Response.status(Response.Status.OK).entity(users).build();
         // return
         // Response.ok.(employeeDao.getEmployeeDetails(employeeId)).build();
+        //comentario
 
         return Response.status(Response.Status.OK).entity(employeeDao.getEmployeeDetails(employeeId)).build();
     }
