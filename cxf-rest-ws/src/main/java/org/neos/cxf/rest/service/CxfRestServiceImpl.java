@@ -19,7 +19,8 @@ public class CxfRestServiceImpl implements CxfRestService {
         log.info("CAMBIO DESDE MASTER..");
         log.info("CAMBIO DESDE hotfix/cxf_rs_uploadservice..");
         log.info("ENTRANDO AL SERVICIO EMPLEADO REST-CAMBIO");
-        log.info("CAMBIO DESDE hotfix/cxf_rs_uploadservice..");
+        
+        
         if (employeeId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
