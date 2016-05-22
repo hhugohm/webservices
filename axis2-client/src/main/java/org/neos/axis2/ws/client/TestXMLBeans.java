@@ -1,3 +1,6 @@
+/**
+ * Comentario para clase cliente
+ * */
 package org.neos.axis2.ws.client;
 
 
