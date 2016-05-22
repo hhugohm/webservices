@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 
 import org.neos.axis2.ws.stub.WservicesStub;
 
-
+/*nueva clase*/
 public class TestADB {
 
 	public static void main(String[] args)  {
