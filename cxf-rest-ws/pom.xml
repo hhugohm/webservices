@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- Spring Dependencies curso -->
+		<!-- Spring Dependencies curso J -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
