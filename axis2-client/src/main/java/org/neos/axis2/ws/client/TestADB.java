@@ -14,10 +14,12 @@ public class TestADB {
 				WservicesStub stub = new WservicesStub("http://localhost:8080/axis2-webservice/services/wservices/getMessageService");
 				WservicesStub.GetMessageService req = new WservicesStub.GetMessageService();
 				req.setName("HUGO");
+				System.out.println("Mensaje");
 				
 				WservicesStub.GetMessageServiceResponse response;
 				response = stub.getMessageService(req);
 				System.out.println(response.get_return());
+			
 				
 			} catch (RemoteException e) {
 				e.printStackTrace();
