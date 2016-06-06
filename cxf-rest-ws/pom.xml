@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- Spring Dependencies curso -->
+		<!-- Spring Dependencies curso cambio en InteliJ -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -103,4 +103,5 @@
 		</plugins>
 		<finalName>cxf-rest-ws</finalName>
 	</build>
+	<!-- simulacion de cambio  -->
 </project>
