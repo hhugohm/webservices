@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- New Spring Dependencies curso cambio en InteliJ  -->
+		<!-- New Spring Dependencies curso cambio en http -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
